@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    background-image: url(../assets/Background-image.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+.Login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.Login-top-image {
+    width: 440px;
+    height: 180px;
+}
+
+.Login-form {
+    display: flex;
+    gap: 10px;
+}
+
+.Login-box {
+    background-color: #ffffff;
+    margin-left: 250px;
+    padding: 40px;
+    background: linear-gradient(15deg, rgba(255, 255, 255, 0.9), rgba(179, 187, 229, 0.9), rgba(214, 219, 247, 0.9), rgba(179, 187, 229, 0.9), rgba(255, 255, 255, 0.9));
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    width: 700px;
+}
+
+.Login-input-left {
+    width: 75%;
+    margin-left: 100px;
+}
+
+.Login-input-group {
+    display: flex;
+    margin-bottom: 20px;
+    text-align: left;
+    align-items: center;
+    gap: 20px;
+}
+
+.Login-input-group label {
+    display: block;
+    width: 150px;
+    margin-bottom: 5px;
+    color: rgb(36, 36, 36);
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.Login-input-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.Login-input-group input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.Login-btn-group {
+    width: 25%;
+}
+
+.Login-btn-group button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.Login-login-btn {
+    height: 72%;
+    background: linear-gradient(0deg, blue, skyblue);
+    border: none;
+    border: 2px solid rgb(157, 196, 248);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+.Login-cancel-btn {
+    margin-top: 5px;
+    background: linear-gradient(0deg, lightgray, white);
+    border: none;
+    border: 2px solid rgb(173, 173, 173);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(40, 40, 40);
+}
+
+.Login-cancel-btn:hover,
+.Login-login-btn:hover {
+    opacity: 0.8;
+}
