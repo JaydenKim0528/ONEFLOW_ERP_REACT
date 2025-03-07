@@ -1,35 +1,33 @@
-import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, Navigate, } from "react-router-dom";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import SideNavigation from "./components/layout/SideNavigation";
 import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
 import DashboardPage from "./pages/DashboardPage";
-// import InventoryPage from "./pages/InventoryPage";
-// import ManagementPage from "./pages/ManagementPage";
+import "./styles/App.css";
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  useEffect(() => {
-    const user = localStorage.getItem("user");
-    if (user) {
-      setIsLoggedIn(true);
-    }
-  }, []);
+  const user = {
+    userName: "John Doe",
+    position: "Manager",
+    company: "Oneflow",
+    department: "IT",
+  };
 
   return (
     <Router>
-      <Routes>
-        <Route
-          path="/login"
-          element={isLoggedIn ? <Navigate to="/dashboard" /> : <LoginPage />}
-        />
-        <Route path="/dashboard" element={<DashboardPage />} />
-        {/* <Route path="/inventory" element={<InventoryPage />} /> */}
-        {/* <Route path="/management" element={<ManagementPage />} /> */}
-        <Route
-          path="/"
-          element={isLoggedIn ? <Navigate to="/dashboard" /> : <Navigate to="/login" />}
-        />
-      </Routes>
+      <div className="app-container">
+        <SideNavigation user={user} />
+
+        <div className="main-content">
+          <Routes>
+            <Route path="/" element={<DashboardPage />} />
+            <Route path="/dashboard" element={<DashboardPage />} />
+            <Route path="/register" element={<RegisterPage />} />
+            <Route path="/login" element={<LoginPage />} />
+          </Routes>
+        </div>
+      </div>
     </Router>
   );
 }
