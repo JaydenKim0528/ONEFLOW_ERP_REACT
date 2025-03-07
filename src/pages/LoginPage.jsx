@@ -1,18 +1,37 @@
 import React, { useState } from "react";
+import api from "../api/axiosInstance";
 import "../styles/Login.css";
 import logo from '../assets/Oneflow-ERP-Logo.png'
 
 function LoginPage() {
     const [company, setCompany] = useState("");
-    const [Group, setGroup] = useState("");
+    const [userDepartment, setUserDepartment] = useState("");
     const [userId, setUserId] = useState("");
     const [password, setPassword] = useState("");
 
-    const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("User ID:", userId);
-    console.log("Password:", password);
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            const response = await api.post("/login", {
+                company,
+                userDepartment,
+                userId,
+                password,
+            });
+
+            console.log("로그인 성공:", response.data);
+
+            localStorage.setItem("user", JSON.stringify(response.data));
+
+            window.location.href = "/dashboard";
+
+        } catch (error) {
+            console.error("로그인 실패:", error.response ? error.response.data : error.message);
+            alert("로그인에 실패했습니다. 아이디와 비밀번호를 확인하세요.");
+        }
     };
+
 
     return (
         <div className="Login-container">
@@ -39,8 +58,8 @@ function LoginPage() {
                                 <input
                                     type="text"
                                     id="Group"
-                                    value={Group}
-                                    onChange={(e) => setGroup(e.target.value)}
+                                    value={userDepartment}
+                                    onChange={(e) => setUserDepartment(e.target.value)}
                                     placeholder="부서 코드를 입력하세요"
                                     required
                                 />

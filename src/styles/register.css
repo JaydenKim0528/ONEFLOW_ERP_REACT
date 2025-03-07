@@ -1,0 +1,119 @@
+/* 메인 컨테이너 */
+.register-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.register-container-title {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* 폼 전체 레이아웃 */
+.register-form {
+    display: flex;
+    flex-direction: column;
+    width: 100vh;
+    align-items: center;
+}
+
+/* 레이아웃 - 왼쪽 (입력 필드) + 오른쪽 (이미지 업로드) */
+.register-layout {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 50px;
+    margin: 50px 0;
+}
+
+/* 왼쪽 입력 필드 */
+.register-input-list {
+    display: flex;
+    flex-direction: column;
+    width: 80vh;
+    gap: 15px;
+}
+
+/* 입력 필드 그룹 */
+.register-input-columns {
+    display: flex;
+    gap: 5px;
+}
+
+.register-input-label {
+    width: 20%;
+}
+
+/* 입력 필드 스타일 */
+.register-input-columns input,
+.register-input-columns select {
+    width: 100%;
+    height: 35px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.register-employee-image {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.image-preview-container {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    background-color: #ccc;
+}
+
+.image-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.empty-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #ccc;
+}
+
+.register-submit-button {
+    width: 70vh;
+    height: 40px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.register-submit-button:hover {
+    background-color: #0056b3;
+}
+
+/* 직원 등록 버튼 */
+.register-submit-button {
+    width: 100%;
+    height: 40px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.register-submit-button:hover {
+    background-color: #0056b3;
+}
